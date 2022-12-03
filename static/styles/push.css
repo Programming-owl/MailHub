@@ -1,0 +1,38 @@
+.push_box{
+    max-width: 160px;
+    min-width: 120px;
+
+    height:auto;
+
+    border:none;
+    border-radius: 2px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: #1a222f;
+
+    position: fixed;
+    left:0;
+    right:0;
+    top:10px;
+
+    margin:0 auto;
+
+    z-index: 1;
+
+    transform: translateY(-100px);
+    transition: 1s;
+}
+
+.push_box p{
+    max-width: 110px;
+    text-align: center;
+
+    color:#fff;
+
+    margin:8px auto;
+
+    user-select: none;
+}

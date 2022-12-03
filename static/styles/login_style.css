@@ -1,0 +1,110 @@
+
+
+body{
+    background: #0d1117;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.box{
+    max-width: 250px;
+    height:auto;
+
+    border:none;
+    border-radius: 3px;
+
+    background-color: #181e28;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: absolute;
+    left:0;
+    right:0;
+    top:20%;
+
+    margin:0 auto;
+}
+
+.box p{
+    color:#fff;
+
+    font-size: 23px;
+
+    text-align: center;
+}
+
+.inp{
+    width:75%;
+
+    height:33px;
+
+    border:none;
+    border-radius: 2px;
+
+    margin:8px auto;
+
+    padding-right: 10px;
+    padding-left: 10px;
+
+    outline:none;
+}
+
+.checkbox_box{
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 8%;
+    margin-top:-8px;
+
+    margin-bottom: 10px;
+}
+
+.checkbox_box input{
+    width:18px;
+}
+
+.checkbox_box p{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+#login_button{
+    max-width: 200px;
+
+    width:70%;
+    height: 35px;
+
+    border:none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    background-color: rgb(0, 136, 255);
+
+    margin:10px auto;
+    user-select: none;
+}
+
+button:active{
+    transform: scale(0.98);
+}
+
+.box a{
+    margin:0 auto;
+    color:#fff;
+
+    text-decoration: underline;
+    margin-top:-2px;
+
+    margin-bottom: 15px;
+}
+
+.box a:hover{
+    color:rgb(0, 136, 255);
+}
+
+.box a:active{
+    color:#fff;
+}

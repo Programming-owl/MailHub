@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/styles/push.css?1">
+    <link rel="stylesheet" href="/static/styles/new_message.css">
+
+</head>
+<body>
+    {% csrf_token %}
+    
+    <p id="to" style="display:none;">{{to}}</p>
+
+    <div id="root"></div>
+    <div id="push"></div>
+    <script src="/static/js/new_message.js?4" type="text/babel"></script>
+    <script src="/static/js/push.js?1" type="text/babel"></script>
+</body>
+</html>

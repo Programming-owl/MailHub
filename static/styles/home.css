@@ -1,0 +1,268 @@
+body{
+    background-color: #0d1117;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header{
+    width:100%;
+    height:50px;
+
+    position: fixed;
+
+    top:0px;
+    margin-left: -7px;
+
+    border:none;
+    background-color: #1b232f;
+}
+
+.user_icon_div{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:5px;
+
+    background-color:#2e3b4e;
+
+    cursor: pointer;
+
+    position: absolute;
+    right:20px;
+    top:5px;
+}
+
+.user_icon_div:active{
+    transform: scale(0.98);
+}
+
+#user_icon{
+    width:20px;
+    height:20px;
+
+    filter:invert(0.7);
+
+    cursor: pointer;
+
+    user-select: none;
+
+    margin:0 auto;
+}
+
+
+.user_options{
+    width:160px;
+    height:auto;
+
+    border:none;
+    border-radius: 5px;
+
+    background-color: #1b232f;
+
+    display: none;
+    flex-direction: column;
+
+    position: fixed;
+    right:15px;
+
+    top:60px;
+
+    z-index: 1;
+}
+
+.user_options div{
+    width:100%;
+    height:45px;
+
+    border:none;
+    border-radius: 2px;
+
+    display: flex;
+    flex-direction: row;
+
+    user-select: none;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
+
+.user_options div:hover{
+    background-color:#2e3b4e;
+}
+
+.user_options div img{
+    width:22px;
+    height:22px;
+
+    filter: invert(0.9);
+
+    margin-left: 7px;
+
+    margin-top:11px;
+}
+
+.user_options div p{
+    color:#fff;
+
+    margin-left: 7px;
+
+    font-size: 16px;
+
+    margin-top:14px;
+}
+
+.user_options #received img{
+    width:30px;
+    height:30px;
+
+    margin-top:5px;
+}
+
+#add{
+    width:55px;
+    height:55px;
+
+    position: fixed;
+    right:13px;
+    bottom:35px;
+
+    border:none;
+    border-radius: 5px;
+
+    background-color: #1b232f;
+
+    cursor: pointer;
+
+}
+
+#add img{
+    width:25px;
+    height:25px;
+
+    user-select: none;
+
+    filter:invert(0.9)
+}
+
+#add:active{
+    transform: scale(0.98);
+}
+
+.messages_box{
+    max-width: 700px;
+    height:auto;
+
+    width:90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border:none;
+    border-radius: 10px;
+
+    position: absolute;
+    left:0;
+    right:0;
+    top:80px;
+
+    margin:0 auto;
+
+    background-color: #141a22;
+
+    cursor:pointer;
+
+    user-select: none;
+    z-index: -2;
+}
+
+
+
+.message{
+    display: flex;
+    flex-direction: row;
+
+    width:100%;
+    height:45px;
+
+    background-color: #141a22;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+}
+
+.message:hover{
+    background-color: #1b232d;
+}
+
+.message #from{
+    color:#fff;
+    font-size: 17px;
+
+    margin-left:10px;
+
+    margin-top:12px;
+}
+
+.message #theme{
+    color:#fff;
+    font-size: 19px;
+
+    margin-left:20px;
+    margin-top:10px;
+}
+
+#message_text{
+    color:rgba(255, 255, 255, 0.741);
+    font-size: 18px;
+
+    white-space: nowrap;
+
+    margin-left:5px;
+    margin-top:9px;
+    
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    max-width:50%;
+
+    height:40px;
+}
+
+#padding{
+    height:20px;
+}
+
+.new_message{
+    width:10px;
+    height:10px;
+
+    margin-left:5px;
+    padding-right:5px;
+}
+
+@media (max-width:700px){
+    .message{
+        flex-direction: column;
+        height:auto;
+    }
+
+    .message #message_text{
+        display: none;
+    }
+
+    .message #theme{
+        font-size: 15px;
+        margin-left:10px;
+        margin-top:-5px;
+
+        color:rgba(255, 255, 255, 0.558)
+    }
+}
