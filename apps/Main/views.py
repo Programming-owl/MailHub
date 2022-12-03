@@ -160,9 +160,11 @@ class DB:
 
 def login_requered(f):
     def main(request, **kwargs):
-        if (request.session['id'] == None):
+        try:
+            if (request.session['id'] == None):
+                return HttpResponseRedirect("/login")
+        except:
             return HttpResponseRedirect("/login")
-
         return f(request, **kwargs)
     
     return main
