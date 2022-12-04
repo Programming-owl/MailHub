@@ -65,7 +65,7 @@ function show_messages(){
 
         let b = (
             <div class='messages_box'>
-                <div id='padding'></div>
+                <div id='padding'><p>Отправленно</p></div>
                 {box}
                 
             </div>
@@ -79,7 +79,7 @@ function show_messages(){
 
 
 const button = (
-    <button id='add' onClick={() => window.open("/new_message", "_self")}><img src='/static/pencil2.png'/></button>
+    <button id='add' onClick={() => window.open("/new_message", "_self")}><img src='/static/sent-mail.png'/></button>
 );
 
 function rend(b){

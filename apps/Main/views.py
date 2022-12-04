@@ -15,7 +15,7 @@ class user:
 
 class DB:
     def __init__(self):
-        self.conn = psycopg2.connect("postgres://mail_user:7jMZvwmYRF1Tp7RnPP3kFKRzBGjgg0Pr@dpg-ce4uq8p4reb0n5m70ke0-a.oregon-postgres.render.com/mail")
+        self.conn = psycopg2.connect("dbname=postgres user=postgres password=99697212Egor host=db.rtqtvqmrssrwzxvctvvz.supabase.co")
         self.cursor = self.conn.cursor()
 
     def table_exists(self, name):

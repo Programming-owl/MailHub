@@ -39,7 +39,7 @@ function send(){
 
         show_push("Отправлено!");
         setTimeout(function(){
-            window.open("/", "_self");
+            window.history.go(-1);
         }, 3100);
     })
 }
