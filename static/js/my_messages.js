@@ -53,10 +53,12 @@ function show_messages(){
             let block = (
                 <div class='message' id={elem.id} onClick={()=>window.open(`/message/${elem.id}`, "_self")}>
                     
-                    {from}
-                    <p id='theme'>{elem.theme}</p>
+                    <div id='from_div'>
+                        {from}
 
-                    <p id='message_text'>- {elem.message}</p>
+                        <p id='theme'>{elem.theme}</p>
+                        <p id='message_text'>- {elem.message}</p>
+                    </div>
                 </div>
             );
 
