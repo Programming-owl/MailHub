@@ -217,6 +217,8 @@ body{
     margin-top:10px;
 }
 
+
+
 #message_text{
     color:rgba(255, 255, 255, 0.741);
     font-size: 18px;
@@ -225,16 +227,25 @@ body{
 
     margin-left:5px;
     margin-top:9px;
-    
-    white-space: nowrap; /* Запрещаем перенос строк */
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    max-width:50%;
 
     height:40px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
+#from_div{
+    display: flex;
+    flex-direction: row;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 96%
+}
+
 
 #padding{
     height: 52px;
@@ -268,10 +279,15 @@ body{
     }
 
     .message #theme{
-        font-size: 15px;
+        font-size: 17px;
         margin-left:10px;
         margin-top:-5px;
 
         color:rgba(255, 255, 255, 0.558)
+    }
+
+    #from_div{
+        display: flex;
+        flex-direction: column;
     }
 }
