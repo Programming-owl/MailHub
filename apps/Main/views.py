@@ -55,6 +55,8 @@ class DB:
 
         request.session['login'] = login
         request.session['id'] = id
+
+        request.session.save()
         
         return "ok"
     
@@ -71,6 +73,8 @@ class DB:
         if (user_password == password):
             request.session['login'] = login
             request.session['id'] = user_id
+
+            request.session.save()
 
             return 'ok'
         
@@ -163,9 +167,9 @@ def login_requered(f):
         try:
             if (request.session['id'] == None):
                 return HttpResponseRedirect("/login")
+            return f(request, **kwargs)
         except:
-            return HttpResponseRedirect("/login")
-        return f(request, **kwargs)
+            return HttpResponseRedirect("/login")      
     
     return main
 
@@ -263,5 +267,6 @@ def get_sent(request):
 def logout(request):
     request.session['login'] = None
     request.session['id'] = None
+    request.session.save()
 
     return HttpResponseRedirect('/login')
