@@ -182,6 +182,8 @@ USER = user()
 #!------ autenfication functions
 
 def login(request):
+
+
     return render(request, 'index.html')
 
 def login_post(request):
@@ -189,6 +191,10 @@ def login_post(request):
     password = request.GET['password']
 
     status = db.login(request, login, password)
+
+    request.session['id'] = '2'
+    request.session.modified = True
+    request.session.save()
 
     return JsonResponse({'status':status})
 
