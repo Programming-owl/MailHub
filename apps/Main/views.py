@@ -182,7 +182,7 @@ USER = user()
 #!------ autenfication functions
 
 def login(request):
-
+    print(request.session['id'])
 
     return render(request, 'index.html')
 
