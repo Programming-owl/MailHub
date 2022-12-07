@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 import psycopg2
 
+
 # Create your views here.
 class user:
     def __init__(self):
