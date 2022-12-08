@@ -8,6 +8,8 @@ const header = (
             <img src='/static/user.png' id='user_icon'></img>
         </div>
 
+        <img src='/static/owl.png' class='owl'/>
+
         <div class='user_options' id='user_options'>
 
             <div id='sent' onClick={() => window.open('/sent', "_self")}>
@@ -72,7 +74,7 @@ function show_messages(){
             <div class='messages_box'>
                 <div id='padding'><p>Входящие</p></div>
                 {box}
-                
+                <div id='padding2'></div>
             </div>
         );
 
@@ -86,6 +88,10 @@ function show_messages(){
 const button = (
     <button id='add' onClick={() => window.open("/new_message", "_self")}><img src='/static/sent-mail.png'/></button>
 );
+
+const start_ico = <img src='/static/owl.png' class='start_ico'/>
+
+root1.render(start_ico);
 
 function rend(b){
     root1.render([header, (b), button]);

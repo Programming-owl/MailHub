@@ -228,16 +228,19 @@ def send(request):
 
 @login_requered
 def show_messages(request):
-    _db = DB()
-    messages = _db.get_messages(request.session['login'])
+    try:
+        _db = DB()
+        messages = _db.get_messages(request.session['login'])
 
-    if (messages != None):
-        messages = messages[::-1]
+        if (messages != None):
+            messages = messages[::-1]
 
-    else:
-        messages = "None"
+        else:
+            messages = "None"
 
-    return JsonResponse({'ans':messages})
+        return JsonResponse({'ans':messages})
+    except:
+        return JsonResponse({'ans':""})
 
 @login_requered
 def message(request, m_id):
