@@ -170,8 +170,7 @@ def login_requered(f):
     
     return main
 
-global db
-db = DB()
+
 
 global USER
 USER = user()
@@ -185,6 +184,7 @@ def login_post(request):
     login = request.GET['login']
     password = request.GET['password']
 
+    db = DB()
     status = db.login(request, login, password)
 
     return JsonResponse({'status':status})
@@ -196,6 +196,7 @@ def signin_post(request):
     login = request.GET['login']
     password = request.GET['password']
 
+    db = DB()
     status = db.new_account(request, login, password)
 
     return JsonResponse({'status':status})
@@ -218,6 +219,8 @@ def send(request):
     theme = request.GET['theme']
     message = request.GET['message'].replace("<br>", "\n")
 
+    db = DB()
+
     if (db.login_free(login)):
         return JsonResponse({'status':"Пользователь не найден"})
 
@@ -228,6 +231,9 @@ def send(request):
 
 @login_requered
 def show_messages(request):
+
+    db = DB()
+
     try:
         _db = DB()
         messages = _db.get_messages(request.session['login'])
@@ -246,6 +252,8 @@ def show_messages(request):
 def message(request, m_id):
     print(m_id)
 
+    db = DB()
+
     s = db.get_message(m_id, request.session['login'])
 
     return render(request, 'message.html', {"id":s['id'], 'from':s['from'], "theme":s['theme'], 'message':s['message']})
@@ -255,6 +263,7 @@ def sent(request):
     return render(request, 'my_messages.html')
 
 def get_sent(request):
+    db = DB()
     my_messages = db.get_my_messages(request.session['login'])
 
     if (my_messages == None):
