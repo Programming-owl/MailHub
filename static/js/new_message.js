@@ -27,6 +27,10 @@ function send(){
         return;
     }
 
+    while (to[to.length - 1] == " "){
+        to = to.slice(0, -1);
+    }
+
     const csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     let f = fetch(`/send?to=${to}&theme=${theme}&message=${message}`).then(function(resp){

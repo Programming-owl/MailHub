@@ -24,7 +24,7 @@ root.render(box);
 
 function checkbox_clicked(){
     let box = document.querySelector('#checkbox');
-    
+
     if (box.checked == true){
         document.querySelector("#password").type = 'text';
     }else{
@@ -40,6 +40,10 @@ function make_account(){
     if (login.length == 0 || password.length == 0){
         show_push("Все поля долны быть заполнены");
         return;
+    }
+
+    while (login[login.length - 1] == " "){
+        login = login.slice(0, -1);
     }
 
     const csrf = document.querySelector('[name=csrfmiddlewaretoken]').value;

@@ -266,7 +266,7 @@ def get_sent(request):
     db = DB()
     my_messages = db.get_my_messages(request.session['login'])
 
-    if (my_messages == None):
+    if (my_messages == None):  
         ans = "None"
     else:
         my_messages = my_messages[::-1]
